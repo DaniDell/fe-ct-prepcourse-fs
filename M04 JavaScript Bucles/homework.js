@@ -168,7 +168,8 @@ function doWhile(num) {
    // Utilizar el bucle Do-While.
    // Tu código:
    let i = 0 ;
-   do {num += 5 ;i++} 
+   do {num += 5 ;
+      i++} 
    while (i < 8)
    return num
 }
