@@ -144,7 +144,9 @@ function todosIguales(array) {
          return false;
       }
    } 
-   return true;
+   return true; {
+      
+   }
 }
 
 function mesesDelAño(array) {
