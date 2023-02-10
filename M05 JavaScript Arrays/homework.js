@@ -138,15 +138,13 @@ function todosIguales(array) {
    // Si todos los elementos del arreglo son iguales, retornar true.
    // Caso contrario retornar false.
    // Tu código:****************************************************
-   let comparar = array[0]
+   let comparar = array[0];
    for(let i=1; i < array.length; i++) {
-      if (array[i] !== comparar); { 
+      if (array[i] !== comparar) { 
          return false;
       }
    } 
-   return true; {
-      
-   }
+   return true; 
 }
 
 function mesesDelAño(array) {
@@ -168,7 +166,7 @@ function tablaDelSeis() {
    let arrayTabla6 = [];
       for (let i = 0; i <= 10; i++) {
          arrayTabla6.push(6 * i);
-      }
+   }
    return arrayTabla6;
 }
 
