@@ -140,7 +140,7 @@ function sumarLikesDeUsuario(objetoUsuario) {
 // return totallikes
 
 let totallikes = 0;
-objetoUsuario.post.forEach((element) => (totallikes += post.likes)) ;
+objetoUsuario.posts.forEach((post) => (totallikes += post.likes)) ;
 return totallikes;
 }
 
