@@ -6,12 +6,13 @@ function mayuscula(nombre) {
    // [Ejemplo]: "mario" ----> "Mario".
    // Tu código:
 
-   let primera = nombre[0].toUpperCase()
-   for(let i = 1; i < nombre.length; i++){
-      primera = primera  + nombre[i]
+   // let primera = nombre[0].toUpperCase()
+   // for(let i = 1; i < nombre.length; i++){
+   //    primera = primera  + nombre[i]
       
-   }
-   return primera;
+   // }
+   // return primera;
+   return nombre[0].toUpperCase() + nombre.slice(1)
 }
 
 function invocarCallback(cb) {
@@ -26,7 +27,7 @@ function operacionMatematica(num1, num2, cb) {
    // El callback realiza una operación matemática, por lo que necesita de los dos números.
    // Retorna el resultado del callback pasándole como parámetros los números.
    // Tu código:
-   cb(num1,num2)
+  return cb(num1,num2)
 }
 
 function sumarArray(arrayOfNumbers, cb) {

@@ -8,13 +8,13 @@ function deObjetoAarray(objeto) {
    // Tu código:
 
    var array = [];
-   var arrayClaves = Object.keys(objeto);
-   for (var clave of arrayClaves) {
+   // var arrayClaves = Object.keys(objeto);
+   // for (var clave of arrayClaves) {
+   //    array.push([clave, objeto[clave]])
+   // }
+   for (var clave in objeto) {
       array.push([clave, objeto[clave]])
    }
-   // for (var clave in objeto) {
-   //    array.push([clave, objeto[clave]]);
-   // }
    return array;
 }
 
@@ -24,6 +24,22 @@ function numberOfCharacters(string) {
    // Las letras deben estar en orden alfabético.
    // [EJEMPLO]: "adsjfdsfsfjsdjfhacabcsbajda" ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 }
    // Tu código:
+   var objeto = {};
+   var arrayDeString = string.split("");
+   var letrasOrdenadas = arrayDeString.sort();
+
+   // for (let i = 0; i < letrasOrdenadas.length; i++) {
+   //    arrayDeString[i].keys() ;
+      
+   // }
+   for  (var letra of letrasOrdenadas) {
+      if(!objeto[letra]) {
+         objeto[letra] = 1;
+      }else {
+         objeto[letra] += 1;
+      }
+   }
+   return objeto
 }
 
 function capToFront(string) {
@@ -32,6 +48,17 @@ function capToFront(string) {
    // Retornar el string.
    // [EJEMPLO]: soyHENRY ---> HENRYsoy
    // Tu código:
+   var arrayString = string.split("");
+   var mayusculas = [];
+   var minusculas = [];
+   for (var letra of arrayString) {
+      if (letra === letra.toLowerCase()) {
+      minusculas.push(letra);
+   } else {
+      mayusculas.push(letra);
+   }
+}
+return mayusculas.join("") + minusculas.join("");
 }
 
 function asAmirror(frase) {
@@ -39,18 +66,40 @@ function asAmirror(frase) {
    // La diferencia es que cada palabra estará escrita al inverso.
    // [EJEMPLO]: "The Henry Challenge is close!"  ---> "ehT yrneH egnellahC si !esolc"
    // Tu código:
+   var alRevez = "";
+   var newFrase = frase.split(" ")
+   for (let i = 0; i < newFrase.length; i++) {
+      if (i !== 0) alRevez += (" ")+ newFrase[i].split("").reverse().join("")
+   else alRevez += newFrase[i].split("").reverse().join("");
+      
+   }
+   return alRevez
 }
 
 function capicua(numero) {
    // Si el número que recibes es capicúa debes retornar el string: "Es capicua".
    // Caso contrario: "No es capicua".
    // Tu código:
+
+var num = numero.toString();
+var numInv = "";
+for (var i = num.length - 1 ; i >= 0 ; i--){
+   numInv = numInv + num[i]
+}
+if (numInv === num) return "Es capicua"
+else return "No es capicua";
 }
 
 function deleteAbc(string) {
    // Tu tarea es eliminar las letras "a", "b" y "c" del string recibido.
    // Retorna el string sin estas letras.
    // Tu código:
+   string = string.split("");
+
+   var str = string.filter ( function (elemento) {
+      return elemento !== "a" && elemento !== "b" && elemento !== "c";
+   });
+   return str.join("");
 }
 
 function sortArray(arrayOfStrings) {
@@ -68,8 +117,14 @@ function buscoInterseccion(array1, array2) {
    // Si no tienen elementos en común, retornar un arreglo vacío.
    // [PISTA]: los arreglos no necesariamente tienen la misma longitud.
    // Tu código:
+   var nuevoArray = [];
+   for (let i = 0; i < array1.length; i++) {
+      for (let j = 0; j < array2.length; j++) {
+         if (array1[i] === array2[j]){
+            nuevoArray.push(array1[i])
+         }}}
+return nuevoArray
 }
-
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
 module.exports = {
    deObjetoAarray,
